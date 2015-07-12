@@ -1,0 +1,11 @@
+.idea
+.editorconfig
+.npmignore
+.jshintrc
+.jshintignore
+.DS_Store
+Gruntfile.js
+npm-debug.log
+node_modules
+test
+coverage
