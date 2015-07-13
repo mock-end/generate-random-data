@@ -1,3 +1,6 @@
+'use strict';
+
+var expect = require('chai').expect;
 var maleFirstNames = ['James', 'John', 'Robert', 'Michael', 'William', 'David',
   'Richard', 'Charles', 'Joseph', 'Thomas', 'Christopher', 'Daniel', 'Paul',
   'Mark', 'Donald', 'George', 'Kenneth', 'Steven', 'Edward', 'Brian', 'Ronald',
@@ -16,28 +19,35 @@ var lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Miller',
   'Lopez', 'Lee', 'Gonzalez', 'Harris', 'Clark', 'Lewis', 'Robinson', 'Walker',
   'Perez', 'Hall', 'Young', 'Allen'];
 
-var exports = {
-  male_first_name: function () {
-    return this.pickOne(maleFirstNames);
-  },
+describe('./lib/random/names', function () {
 
-  female_first_name: function () {
-    return this.pickOne(femaleFirstNames);
-  },
+  var random = require('../../../lib');
 
-  last_name: function () {
-    return this.pickOne(lastNames);
-  },
+  it('maleFirstName()', function () {
 
-  name: function (middle) {
-    return (this.bool() ? this.maleFirstName() : this.femaleFirstName()) + ' ' +
-      (middle ? middle + ' ' : '') +
-      this.lastName();
-  }
-};
+    expect(maleFirstNames).to.include((random.maleFirstName()));
+  });
 
-exports.maleFirstName = exports.male_first_name;
-exports.femaleFirstName = exports.female_first_name;
-exports.lastName = exports.last_name;
+  it('femaleFirstName()', function () {
 
-module.exports = exports;
+    expect(femaleFirstNames).to.include((random.femaleFirstName()));
+  });
+
+  it('lastName()', function () {
+
+    expect(lastNames).to.include((random.lastName()));
+  });
+
+  it('name()', function () {
+
+    expect((random.name()).split(' ').length).to.equal(2);
+    expect((random.name('bob')).split(' ').length).to.equal(3);
+
+    var name = random.name('middle').split(' ');
+
+    expect(name.length).to.equal(3);
+    expect(name[1]).to.equal('middle');
+  });
+
+});
+

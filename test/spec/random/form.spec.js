@@ -1,3 +1,8 @@
+'use strict';
+
+var expect = require('chai').expect;
+var assert = require('chai').assert;
+
 var langs = ['Afrikaans', 'Azərbaycan dili (Latın)', 'Bahasa Indonesia',
   'Bahasa Melayu', 'Bosanski (Latinica)', 'Català', 'Čeština', 'Cymraeg',
   'Dansk', 'Deutsch', 'Eesti', 'English (United Kingdom)',
@@ -22,60 +27,28 @@ var isp = [130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 145, 147,
   150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 180, 181,
   182, 183, 184, 185, 186, 187, 188, 189];
 
-var exports = {
+describe('./lib/random/boolean', function () {
 
-  guid: function () {
-    var pool = 'ABCDEF1234567890';
-    return this.string(pool, 8) + '-' +
-      this.string(pool, 4) + '-' +
-      this.string(pool, 4) + '-' +
-      this.string(pool, 4) + '-' +
-      this.string(pool, 12);
-  },
+  var random = require('../../../lib');
 
-  id: function () {
-    var id;
-    var sum = 0;
-    var rank = ['7', '9', '10', '5', '8', '4', '2', '1', '6', '3', '7', '9', '10', '5', '8', '4', '2'];
-    var last = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'];
+  it('guid()', function () {
+    expect(random.guid()).to.have.length(36);
+  });
 
-    id = this.date('YYYYMMDDHHmmss') + this.str('number', 3);
+  it('id()', function () {
+    expect(random.id()).to.have.length(18);
+  });
 
-    for (var i = 0; i < id.length; i++) {
-      sum += id[i] * rank[i];
-    }
-    id += last[sum % 11];
-    return id;
-  },
+  it('lang()', function () {
+    expect(langs).to.include((random.lang()));
+  });
 
-  language: function () {
-    return this.pickOne(langs);
-  },
+  it('zipcode()', function () {
+    expect(random.zipcode(5)).to.have.length(5);
+    expect(random.zipcode()).to.have.length(6);
+  });
 
-  zipcode: function (len) {
-    var zip = '';
-    for (var i = 0; i < (len || 6); i++) {
-      zip += this.natural(0, 9);
-    }
-    return zip;
-  },
-
-  mobile: function () {
-
-    var result = '';
-    var i = 8;
-
-    while (i--) {
-      result += this.natural(0, 9) + '';
-    }
-
-    result = this.pickOne(isp) + result;
-
-    return result;
-  }
-};
-
-exports.lang = exports.language;
-exports.zip = exports.zipcode;
-
-module.exports = exports;
+  it('mobile()', function () {
+    expect(random.mobile()).to.have.length(11);
+  });
+});
