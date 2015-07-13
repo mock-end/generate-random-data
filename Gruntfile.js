@@ -82,7 +82,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-mocha-istanbul');
 
 
-  grunt.registerTask('test', ['mochaTest']);
+  grunt.registerTask('test', ['jshint', 'mochaTest']);
   grunt.registerTask('test-cov', ['clean:coverage', 'mocha_istanbul:coverage']);
 
   // By default, lint and run all tests.
