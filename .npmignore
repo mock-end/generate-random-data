@@ -3,6 +3,7 @@
 .npmignore
 .jshintrc
 .jshintignore
+.travis.yml
 .DS_Store
 Gruntfile.js
 npm-debug.log
