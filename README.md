@@ -11,3 +11,4 @@ Set of functions to generate random data.
 [![npm:](https://img.shields.io/npm/v/generate-random-data.svg?style=flat-square)](https://www.npmjs.com/packages/generate-random-data)
 [![downloads:?](https://img.shields.io/npm/dm/generate-random-data.svg?style=flat-square)](https://www.npmjs.com/packages/generate-random-data)
 [![dependencies:?](https://img.shields.io/david/bubkoo/generate-random-data.svg?style=flat-square)](https://david-dm.org/bubkoo/generate-random-data)
+
