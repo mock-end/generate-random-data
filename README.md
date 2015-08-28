@@ -12,3 +12,31 @@
 [![downloads:?](https://img.shields.io/npm/dm/generate-random-data.svg?style=flat-square)](https://www.npmjs.com/packages/generate-random-data)
 [![dependencies:?](https://img.shields.io/david/bubkoo/generate-random-data.svg?style=flat-square)](https://david-dm.org/bubkoo/generate-random-data)
 
+
+Install with npm or Bower:
+
+```shell
+npm install generate-random-data
+```
+
+Use with node.js:
+
+```javascript
+var random = require('generate-random-data');
+random.int(1, 99); // => 13
+```
+
+## Usage
+
+This module provides many util function for generating random data:
+
+- int(min, max) or integer(min, max)
+- natural(min, max)
+- float(iMin, iMax, dMin, dMax, precision)
+- bool(min, max, seed) or boolean(min, max, seed)
+- char(pool) or character(pool)
+- str(pool, min, max) or string(pool, min, max)
+
+
+[Changelog](https://github.com/bubkoo/generate-random-data/blob/master/HISTORY.md)
+
