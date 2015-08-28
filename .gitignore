@@ -2,6 +2,7 @@
 .DS_Store
 npm-debug.log
 node_modules
+bower_components
 test/coverage
 coverage
 tmp
