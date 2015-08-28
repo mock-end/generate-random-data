@@ -1,6 +1,6 @@
 # generate-random-data
 
-Set of functions to generate random data.
+> A simple javascript utility for generating random data.
 
 [![MIT License](https://img.shields.io/badge/license-MIT_License-green.svg?style=flat-square)](https://github.com/bubkoo/generate-random-data/blob/master/LICENSE)
 
