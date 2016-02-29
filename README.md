@@ -1,6 +1,6 @@
 # generate-random-data
 
-> A simple javascript utility for generating random data.
+> Javascript utilities for generating random data. 
 
 [![MIT License](https://img.shields.io/badge/license-MIT_License-green.svg?style=flat-square)](https://github.com/bubkoo/generate-random-data/blob/master/LICENSE)
 
@@ -13,7 +13,7 @@
 [![dependencies:?](https://img.shields.io/david/bubkoo/generate-random-data.svg?style=flat-square)](https://david-dm.org/bubkoo/generate-random-data)
 
 
-Install with npm or Bower:
+Install with npm:
 
 ```shell
 npm install generate-random-data
@@ -42,10 +42,12 @@ This module provides many util functions for generating random data:
 - pickSome(arr, count, shuffle)
 - shuffle(arr)
 - datetime(date, format)
+- randomDate(min, max)
+- formatDate(data, format)
+- parseDate(...)
+- now(unit, format)
 - date(date, format)
 - time(date, format)
-- datetime(date, format)
-- randomDate(min, max)
 - language() or lang()
 - zipcode(length) or zip(length)
 - mobile()
