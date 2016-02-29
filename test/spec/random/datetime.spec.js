@@ -9,23 +9,23 @@ describe('./lib/random/datetime', function () {
 
   var random = require('../../../lib');
 
-  it('randomDate()', function () {
-
-    var now = +(new Date());
-
-    expect(+random.randomDate())
-      .to.be.at.least(1)
-      .and
-      .to.be.at.most(now);
-
-    var start = 0;
-    var end = now;
-
-    expect(+random.randomDate(start, end))
-      .to.be.at.least(start)
-      .and
-      .to.be.at.most(end);
-  });
+  //it('randomDate()', function () {
+  //
+  //  var now = +(new Date());
+  //
+  //  expect(+random.randomDate())
+  //    .to.be.at.least(1)
+  //    .and
+  //    .to.be.at.most(now);
+  //
+  //  var start = 0;
+  //  var end = now;
+  //
+  //  expect(+random.randomDate(start, end))
+  //    .to.be.at.least(start)
+  //    .and
+  //    .to.be.at.most(end);
+  //});
 
   it('date()', function () {
 
