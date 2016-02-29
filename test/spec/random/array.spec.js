@@ -27,7 +27,7 @@ describe('./lib/random/array', function () {
     expect(random.pickSome()).to.eql([]);
     expect(random.pickSome([])).to.eql([]);
     expect(random.pickSome([1, 2, 3], 0)).to.eql([]);
-    expect(random.pickSome([1, 2, 3], 'count')).to.eql([]);
+    expect([1, 2, 3]).to.include.members(random.pickSome([1, 2, 3], 'count'));
     expect(random.pickSome([1, 2, 3], 10)).to.eql([1, 2, 3]);
     expect([1, 2, 3]).to.include.members(random.pickSome([1, 2, 3], 10, true));
     expect([1, 2, 3]).to.include.members(random.pickSome([1, 2, 3], -1, false));
