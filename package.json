@@ -1,6 +1,6 @@
 {
   "name": "generate-random-data",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Javascript utilities for generating random data.",
   "main": "./lib/index.js",
   "directories": {
